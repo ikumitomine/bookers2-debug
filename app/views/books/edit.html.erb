@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+
+		<h1>Editing Book</h1>
+			<% if @book_n.errors.any? %>
+            	<h3><%= @book_n.errors.count %>errors prohibited this book from being saved:</h3>
+   　        	<ul><% @book_n.errors.full_messages.each do |message| %><li class="message-list"><%= message %></li><% end %></ul>
+          	<% end %>
+
+		<%= render "books/newform", book_n: @book_n %>
+		<%= link_to "Show", book_path(@book_n), class: "book_#{@book_n.id}" %>
+		<%= link_to "Back", books_path, class: "back" %>
+
+	</div>
+	<div class="col-md-3"></div>
+
+</div>
